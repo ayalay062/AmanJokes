@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+button.btn-default {
+    padding: 0px 20px;
+    font-size: 12px;
+    line-height: 32px;
+    padding-bottom: 0px;
+    margin: auto;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #1c799e;
+    color: #ffffff;
+    background-color: #1c799e;
+    transition: background-color .35s, opacity .35s;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    &.mat-mdc-raised-button:not(:disabled) {
+        color: #ffffff;
+        background-color: #1c799e;
+    }
+
+    &:disabled {
+        background-color: #ccc;
+        color: white;
+    }
+}
+
+.form-wrapper {
+    text-align: center;
+    margin: 0px auto;
+    border: 1px solid #1c799e;
+    background-color: #fff;
+    padding: 30px;
+    direction: ltr;
+    color: #1c799e !important;
+    box-shadow: 0 0 3px 1px #1c799ea8 inset;
+    flex-grow: 1;
+    width: 33%;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 10vh;
+
+    .h-title {
+        font-size: 34px;
+        line-height: 60px;
+        width: 100%;
+    }
+
+    .mat-mdc-form-field,
+    .mat-form-field {
+        display: block;
+        width: 300px;
+        margin: auto;
+    }
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: transparent;
+}
+
+.mt-50 {
+    margin-top: 50px !important;
+}

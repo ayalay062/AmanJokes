@@ -1,0 +1,19 @@
+<div class="form-wrapper">
+    <h1 class="h-title">LOGIN</h1>
+    <form [formGroup]="form" (ngSubmit)="login()">
+        <mat-form-field appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input autocomplete="autocomplete" formControlName="userName" type="email" matInput placeholder="User Name" />
+            <mat-error *ngIf="userName?.errors?.['required']"> User name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input autocomplete="autocomplete" formControlName="password" type="password" matInput placeholder="Password" />
+            <mat-error *ngIf="password?.errors?.['required']"> Password is required</mat-error>
+            <mat-error *ngIf="password?.errors?.['pattern']"> Password length 8 , must contain uppercase, lowercase letter, numbers and special character</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn-default mt-50" type="submit" [disabled]="!form.valid ">Login</button>
+    </form>
+</div>

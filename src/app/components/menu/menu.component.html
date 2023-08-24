@@ -1,0 +1,12 @@
+<div class="div-wrapper">
+    <mat-toolbar class="toolbar" color="primary">
+        <h1 class="header-title">JOKES</h1>
+        <span class="div-name" *ngIf="user!= ''; else guest">Hi {{user}}
+            <mat-icon class="logout" (click)="logout()">login</mat-icon>
+        </span>
+        <ng-template #guest>
+            <span class="div-name">שלום אורח</span>
+
+        </ng-template>
+    </mat-toolbar>
+</div>

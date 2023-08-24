@@ -1,0 +1,35 @@
+.header-title {
+    margin-top: 15px;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+.menu-wrapper {
+    text-align: left;
+}
+
+.toolbar {
+    background-color: #1c799e;
+    position: relative;
+}
+
+.div-name {
+    float: right;
+    display: block;
+    position: absolute;
+    right: 50px;
+    font-size: 16px;
+    line-height: 40px;
+    margin: 2px 5px;
+    padding: 0px;
+    cursor: pointer;
+    font-weight: 100;
+    color: white;
+}
+
+
+.logout {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -2px;
+}

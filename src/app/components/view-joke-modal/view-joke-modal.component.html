@@ -1,0 +1,51 @@
+<h3 class="header-h-title">View Joke Details</h3>
+<ng-container *ngIf="data && data.joke">
+
+    <section >
+        <mat-label class="l-f-name">Category</mat-label>
+        <mat-label class="l-f-value">{{data.joke.category}}</mat-label>
+        <!-- <mat-icon class="material-icons-two-tone" color="primary">back_hand</mat-icon> -->
+    </section>
+    <section *ngIf="data.joke.type == 'single'">
+        <mat-label class="l-f-name">Joke</mat-label>
+        <mat-label class="l-f-value">{{data.joke.joke}}</mat-label>
+        <!-- <mat-icon class="material-icons-two-tone" color="primary">back_hand</mat-icon> -->
+    </section>
+    <section *ngIf="data.joke.type == 'twopart'">
+        <mat-label class="l-f-name">Setup</mat-label>
+        <mat-label class="l-f-value">{{data.joke.setup}}  {{data.joke.delivery}} </mat-label>
+        <!-- <mat-icon class="material-icons-two-tone" color="primary">back_hand</mat-icon> -->
+    </section>
+    <mat-divider></mat-divider>
+   
+    <section >
+        <mat-label class="l-f-name">Nsfw:</mat-label>
+        <mat-label class="l-f-value">{{data.joke.flags.nsfw}} </mat-label>
+        <mat-label class="l-f-name">Religious:</mat-label>
+        <mat-label class="l-f-value">{{data.joke.flags.religious}} </mat-label>
+        <mat-label class="l-f-name">Political:</mat-label>
+        <mat-label class="l-f-value">{{data.joke.flags.political}} </mat-label>
+        <mat-label class="l-f-name">Racist:</mat-label>
+        <mat-label class="l-f-value">{{data.joke.flags.racist}} </mat-label>
+        <mat-label class="l-f-name">Sexist:</mat-label>
+        <mat-label class="l-f-value">{{data.joke.flags.sexist}} </mat-label>
+
+        
+        <!-- <mat-icon class="material-icons-two-tone" color="primary">back_hand</mat-icon> -->
+    </section>
+    <mat-divider></mat-divider>
+    <h3 class="header-h-title">Suggested Jokes</h3>
+    <section *ngIf="suggJokes && suggJokes.length>0">
+        <mat-grid-list cols="4"  rowHeight="220px">
+            <mat-grid-tile rowspan="1" *ngFor="let joke of suggJokes">
+                <ng-container [ngSwitch]="joke.type">
+                    <app-single-joke *ngSwitchCase="'single'" [joke]="joke.joke" class="fill-all"></app-single-joke>
+                    <app-twopart-joke *ngSwitchCase="'twopart'" [setup]="joke.setup" [delivery]="joke.delivery"  class="fill-all"></app-twopart-joke>    
+                </ng-container>
+            </mat-grid-tile>
+    
+        </mat-grid-list>
+    
+       
+    </section>
+</ng-container>

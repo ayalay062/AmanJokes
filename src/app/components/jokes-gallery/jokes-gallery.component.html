@@ -1,0 +1,20 @@
+<section *ngIf="jokesList && jokesList.length>0; else noContent" style="padding: 10px 100px;">
+    <mat-grid-list cols="6"  rowHeight="220px">
+        <mat-grid-tile rowspan="1" *ngFor="let joke of jokesList">
+            <ng-container [ngSwitch]="joke.type">
+                <mat-icon (click)="viewJoke(joke)" class="view-joke-icon">open_in_new</mat-icon>
+            
+                <app-single-joke *ngSwitchCase="'single'" [joke]="joke.joke" class="fill-all"></app-single-joke>
+                <app-twopart-joke *ngSwitchCase="'twopart'" [setup]="joke.setup" [delivery]="joke.delivery"  class="fill-all"></app-twopart-joke>
+              
+            </ng-container>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+   
+</section>
+
+<ng-template #noContent>
+    <h1 class="no-content">לא נמצאו תוצאות</h1>
+</ng-template>
